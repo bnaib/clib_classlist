@@ -47,7 +47,7 @@ It is pointer of list item content.
     - struct s_list_element *p_last  
 It is pointer of last list item.  
     - struct s_list_element *p_next  
-It is pointer of last list item.  
+It is pointer of next list item.  
   
 ### Functions  
-Coming soon...
+Description of functions coming soon...

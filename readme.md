@@ -13,7 +13,7 @@ Not completed yet. In testing process...
 You can use the following command in your terminal.  
     <pre>git clone https://github.com/bnaib/clib_classlist.git</pre>  
 - Build a library.  
-Makefile use gcc. If you havn't it, download and set gcc.  
+Makefile use gcc. If you havn't it, download and install gcc.  
 Open folder "clib_classlist" and use command.
     <pre>make</pre>  
 - If build sucessed, you will can see file "libclasslib.a".

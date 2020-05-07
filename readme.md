@@ -27,7 +27,7 @@ Open folder "clib_classlist" and use command.
 ## Way to use  
 In your project, add static library "libclasslib.a" and
 use header file "class_list.h" from folder "inc".  
-    <pre>gcc yourproject.c -L ~/clib_classlist/ -lclasslist</pre>
+    <pre>gcc -I ~/clib_classlist/inc/ yourproject.c -L ~/clib_classlist/ -lclasslist</pre>
     <pre>#include "class_list.h"</pre>  
   
 ## Content  

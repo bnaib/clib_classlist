@@ -53,6 +53,17 @@ int main(void)
 			printf("Test \"03_add.c\": ERROR2.3 %d \n", *(int *)(p_list->p_element->p_next->p_content));
 		if (*(int *)(p_list->p_element->p_last->p_content) != 7)
 			printf("Test \"03_add.c\": ERROR2.4 %d \n", *(int *)(p_list->p_element->p_last->p_content));
+
+		class_list_add_to_start(p_list, p_elem3);
+		if (p_list->length != 3)
+			printf("Test \"03_add.c\": ERROR5  %lu \n", p_list->length);
+		if (*(int *)(p_list->p_element->p_content) != 8)
+			printf("Test \"03_add.c\": ERROR2.5 %d \n", *(int *)(p_list->p_element->p_content));
+		if (*(int *)(p_list->p_element->p_next->p_content) != 6)
+			printf("Test \"03_add.c\": ERROR2.6 %d \n", *(int *)(p_list->p_element->p_next->p_content));
+		if (*(int *)(p_list->p_element->p_last->p_content) != 7)
+			printf("Test \"03_add.c\": ERROR2.7 %d \n", *(int *)(p_list->p_element->p_last->p_content));
+
 		class_list_destruct(&p_list);
 		if (p_list == NULL)
 			printf("Test \"03_construct.c\": OK\n");

@@ -22,7 +22,8 @@ CFILES		=\
 	class_list_del.c
 
 TFILES		=\
-	01_construct.c
+	01_construct.c\
+	02_create.c
 
 INC_DIR		= ./inc/
 INC			= $(addprefix $(INC_DIR), $(HFILES))

@@ -88,4 +88,19 @@ void				class_list_del_element_from_start_index(
 void				class_list_del_element_from_end_index(
 	t_class_list *p_list,
 	size_t index);
+
+t_list_element					*class_list_copy_element(
+	const t_class_list *p_list,
+	t_list_element *p_element);
+t_list_element					*class_list_copy_root(
+	const t_class_list *p_list);
+t_list_element					*class_list_copy_end(
+	const t_class_list *p_list);
+t_list_element					*class_list_copy_element_from_start_index(
+	const t_class_list *p_list,
+	size_t index);
+t_list_element					*class_list_copy_element_from_end_index(
+	const t_class_list *p_list,
+	size_t index);
+
 #endif

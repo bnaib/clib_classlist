@@ -19,11 +19,13 @@ CFILES		=\
 	class_list_create.c\
 	class_list_get.c\
 	class_list_cut.c\
-	class_list_del.c
+	class_list_del.c\
+	class_list_copy.c
 
 TFILES		=\
 	01_construct.c\
-	02_create.c
+	02_create.c\
+	03_add.c
 
 INC_DIR		= ./inc/
 INC			= $(addprefix $(INC_DIR), $(HFILES))

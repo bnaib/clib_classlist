@@ -14,7 +14,6 @@ t_list_element	*class_list_create_element(
 	const void *p_content)
 {
 	t_list_element	*p_element;
-	size_t			i;
 
 	if ((p_element = malloc(sizeof(*p_element))) == NULL)
 		return (NULL);
@@ -23,14 +22,11 @@ t_list_element	*class_list_create_element(
 	p_element->p_next = NULL;
 	if (p_content == NULL)
 		return (p_element);
-	if ((p_element->p_content = malloc(p_list->content_size)) == NULL)
+	if ((p_element->p_content = p_list->copy_list_content(p_content)) == NULL)
 	{
 		free(p_element);
 		return (NULL);
 	}
-	i = -1;
-	while (++i < p_list->content_size)
-		*((char *)p_element->p_content + i) = *((char *)p_content + i);
 	return (p_element);
 }
 

@@ -21,14 +21,14 @@ typedef struct					s_list_element
 
 typedef struct					s_class_list
 {
-	void						(*free_list_content)(void *);      
+	void						(*free_list_content)(void *);
+	void						*(*copy_list_content)(const void *);
 	size_t						length;
-	size_t						content_size;
 	t_list_element				*p_element;
 }								t_class_list;
 
 t_class_list					*class_list_construct(
-	size_t content_size,
+	void *(*copy_list_content)(const void *),
 	void (*free_list_content)(void *));
 void							class_list_destruct(
 	t_class_list **pp_list);

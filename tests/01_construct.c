@@ -10,6 +10,16 @@
 #include "class_list.h"
 #include <stdio.h>
 
+void	*copy_list_content(const void *p_content_from)
+{
+	int *p_content_to;
+
+	if ((p_content_to = malloc(sizeof(int))) == NULL)
+		return (NULL);
+	*p_content_to = *(int *)p_content_from;
+	return (p_content_to);
+}
+
 void	free_list_content(void *content)
 {
 	free(content);
@@ -19,7 +29,7 @@ int main(void)
 {
 	t_class_list	*p_list;
 	
-	p_list = class_list_construct(sizeof(int), free_list_content);
+	p_list = class_list_construct(copy_list_content, free_list_content);
 	if (p_list != NULL)
 	{
 		class_list_destruct(&p_list);

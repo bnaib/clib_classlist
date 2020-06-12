@@ -3,7 +3,7 @@
      /*    By: Sergey Nikolaev                      / ___// | / /          */
     /*    Сontacts: sn.prog@yandex.ru               \__ \/  |/ /          */
    /*    Created: 2020.05.07 (YYYY.MM.DD)          ___/ / /|  /          */
-  /*    Updated: 2020.05.07 (YYYY.MM.DD)          /____/_/ |_/          */
+  /*    Updated: 2020.06.12 (YYYY.MM.DD)          /____/_/ |_/          */
  /*                                                                    */
 /* ****************************************************************** */
 
@@ -27,6 +27,7 @@ void	free_list_content(void *content)
 
 int main(void)
 {
+	const char 		*name_test = "Test \"01_construct.c\": ";
 	t_class_list	*p_list;
 	
 	p_list = class_list_construct(copy_list_content, free_list_content);
@@ -34,11 +35,11 @@ int main(void)
 	{
 		class_list_destruct(&p_list);
 		if (p_list == NULL)
-			printf("Test \"01_construct.c\": OK\n");
+			printf("%s%s\n", name_test, "OK");
 		else
-			printf("Test \"01_construct.c\": ERROR1\n");
+			printf("%s%s\n", name_test, "ERROR1");
 	}
 	else
-		printf("Test \"01_construct.c\": ERROR2\n");
+		printf("%s%s\n", name_test, "ERROR2");
 	return (0);
 }

@@ -18,6 +18,7 @@ void	free_list_content(void *content)
 
 int main(void)
 {
+	const char 		*name_test = "Test \"02_create.c\": ";
 	t_class_list	*p_list;
 	t_list_element  *p_elem;
 	int six;
@@ -28,16 +29,16 @@ int main(void)
 	if (p_list != NULL)
 	{
 		if ((p_elem = class_list_create_element(p_list, &six)) == NULL)
-			printf("Test \"02_create.c\": ERROR1\n");
+			printf("%s%s\n", name_test, "ERROR1");
 		if (*(int *)(p_elem->p_content) != 6)
-			printf("Test \"02_create.c\": ERROR2\n");
+			printf("%s%s\n", name_test, "ERROR2");
 		class_list_destruct(&p_list);
 		if (p_list == NULL)
-			printf("Test \"02_construct.c\": OK\n");
+			printf("%s%s\n", name_test, "OK");
 		else
-			printf("Test \"02_construct.c\": ERROR3\n");
+			printf("%s%s\n", name_test, "ERROR3");
 	}
 	else
-		printf("Test \"01_construct.c\": ERROR4\n");
+		printf("%s%s\n", name_test, "ERROR4");
 	return (0);
 }

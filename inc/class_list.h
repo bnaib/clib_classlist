@@ -3,7 +3,7 @@
      /*    By: Sergey Nikolaev                      / ___// | / /          */
     /*    Сontacts: sn.prog@yandex.ru               \__ \/  |/ /          */
    /*    Created: 2020.05.07 (YYYY.MM.DD)          ___/ / /|  /          */
-  /*    Updated: 2020.06.11 (YYYY.MM.DD)          /____/_/ |_/          */
+  /*    Updated: 2020.06.12 (YYYY.MM.DD)          /____/_/ |_/          */
  /*                                                                    */
 /* ****************************************************************** */
 
@@ -32,6 +32,8 @@ t_class_list					*class_list_construct(
 	void (*free_list_content)(void *));
 void							class_list_destruct(
 	t_class_list **pp_list);
+t_class_list					*class_list_copy(
+	const t_class_list *p_list_from);
 
 void							class_list_add_to_end(
 	t_class_list *p_list,

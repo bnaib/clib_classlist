@@ -3,7 +3,7 @@
      /*    By: Sergey Nikolaev                      / ___// | / /          */
     /*    Сontacts: sn.prog@yandex.ru               \__ \/  |/ /          */
    /*    Created: 2020.05.07 (YYYY.MM.DD)          ___/ / /|  /          */
-  /*    Updated: 2020.06.11 (YYYY.MM.DD)          /____/_/ |_/          */
+  /*    Updated: 2020.06.12 (YYYY.MM.DD)          /____/_/ |_/          */
  /*                                                                    */
 /* ****************************************************************** */
 
@@ -43,4 +43,32 @@ void							class_list_destruct(
 	}
 	free(*pp_list);
 	*pp_list = NULL;
+}
+
+t_class_list					*class_list_copy(
+	const t_class_list *p_list_from)
+{
+	t_class_list	*p_list_to;
+	t_list_element	*ptr[2];
+	size_t			i;
+
+	if (p_list_from == NULL ||
+		(p_list_to = class_list_construct(p_list_from->copy_list_content,
+		p_list_from->free_list_content)) == NULL)
+		return (NULL);
+	if (p_list_from->length == 0)
+		return (p_list_to);
+	ptr[0] = p_list_from->p_element->p_last;
+	i = -1;
+	while (++i < p_list_from->length)
+	{
+		ptr[0] = ptr[0]->p_next;
+		if ((ptr[1] = class_list_copy_element(p_list_from, ptr[0])) == NULL)
+		{
+			class_list_destruct(&p_list_to);
+			return (NULL);
+		}
+		class_list_add_to_end(p_list_to, ptr[1]);
+	}
+	return (p_list_to);
 }

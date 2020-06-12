@@ -3,7 +3,7 @@
      /*    By: Sergey Nikolaev                      / ___// | / /          */
     /*    Сontacts: sn.prog@yandex.ru               \__ \/  |/ /          */
    /*    Created: 2020.05.07 (YYYY.MM.DD)          ___/ / /|  /          */
-  /*    Updated: 2020.06.11 (YYYY.MM.DD)          /____/_/ |_/          */
+  /*    Updated: 2020.06.12 (YYYY.MM.DD)          /____/_/ |_/          */
  /*                                                                    */
 /* ****************************************************************** */
 
@@ -24,9 +24,9 @@ void						class_list_cut_element(
 			p_list->p_element = p_list->p_element->p_next;
 		p_element->p_next->p_last = p_element->p_last;
 		p_element->p_last->p_next = p_element->p_next;
-		p_element->p_next = NULL;
-		p_element->p_last = NULL;
 	}
+	p_element->p_next = NULL;
+	p_element->p_last = NULL;
 }
 
 t_list_element				*class_list_cut_root(

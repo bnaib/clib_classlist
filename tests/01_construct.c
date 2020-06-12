@@ -30,7 +30,7 @@ int main(void)
 	const char 		*name_test = "Test \"01_construct.c\": ";
 	t_class_list	*p_list;
 	
-	p_list = class_list_construct(copy_list_content, free_list_content);
+	p_list = class_list_construct(copy_list_content, free_list_content, NULL);
 	if (p_list != NULL)
 	{
 		class_list_destruct(&p_list);

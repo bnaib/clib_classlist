@@ -31,23 +31,4 @@ use header file "class_list.h" from folder "inc".
     <pre>#include "class_list.h"</pre>  
   
 ## Content  
-### Structures  
-+ t_class_list
-    - void (*free_list_content)(void *)  
-It is callback function for freeing content in list.  
-    - size_t length  
-It is count of list's elements.  
-    - size_t content_size;  
-It is size of list item content in bytes.  
-    - t_list_element *p_element  
-It is pointer of list root item.  
-+ t_list_element  
-    - void *p_content;  
-It is pointer of list item content.  
-    - struct s_list_element *p_last  
-It is pointer of last list item.  
-    - struct s_list_element *p_next  
-It is pointer of next list item.  
-  
-### Functions  
-Description of functions coming soon...
+Description of structures and functions coming soon...

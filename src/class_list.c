@@ -11,7 +11,8 @@
 
 t_class_list					*class_list_construct(
 	void *(*copy_list_content)(const void *),
-	void (*free_list_content)(void *))
+	void (*free_list_content)(void *),
+	t_class_list *(*acopy_list_content)(t_class_list *, const t_class_list *))
 {
 	t_class_list	*p_list;
 
@@ -19,6 +20,7 @@ t_class_list					*class_list_construct(
 		return (NULL);
 	p_list->free_list_content = free_list_content;
 	p_list->copy_list_content = copy_list_content;
+	p_list->acopy_list_content = acopy_list_content;
 	p_list->length = 0;
 	p_list->p_element = NULL;
 	return (p_list);
@@ -54,7 +56,8 @@ t_class_list					*class_list_copy(
 
 	if (p_list_from == NULL ||
 		(p_list_to = class_list_construct(p_list_from->copy_list_content,
-		p_list_from->free_list_content)) == NULL)
+			p_list_from->free_list_content,
+			p_list_from->acopy_list_content)) == NULL)
 		return (NULL);
 	if (p_list_from->length == 0)
 		return (p_list_to);
@@ -70,5 +73,6 @@ t_class_list					*class_list_copy(
 		}
 		class_list_add_to_end(p_list_to, ptr[1]);
 	}
-	return (p_list_to);
+	return ((p_list_to->acopy_list_content == NULL) ? p_list_to :
+		p_list_to->acopy_list_content(p_list_to, p_list_from));
 }

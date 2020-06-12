@@ -28,7 +28,7 @@ int main(void)
 	int seven = 7;
 	int eight = 8;
 	p_elem = NULL;
-	p_list = class_list_construct(copy_list_content, free_list_content);
+	p_list = class_list_construct(copy_list_content, free_list_content, NULL);
 	if (p_list != NULL)
 	{
 		if ((p_elem = class_list_create_element_to_end(p_list, &six)) == NULL)

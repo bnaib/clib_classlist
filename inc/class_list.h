@@ -19,17 +19,22 @@ typedef struct					s_list_element
 	struct s_list_element		*p_next;
 }								t_list_element;
 
-typedef struct					s_class_list
+typedef struct					s_class_list t_class_list;
+
+struct					s_class_list
 {
 	void						(*free_list_content)(void *);
 	void						*(*copy_list_content)(const void *);
+	t_class_list				*(*acopy_list_content)(t_class_list *,
+									const t_class_list *);
 	size_t						length;
 	t_list_element				*p_element;
-}								t_class_list;
+};
 
 t_class_list					*class_list_construct(
 	void *(*copy_list_content)(const void *),
-	void (*free_list_content)(void *));
+	void (*free_list_content)(void *),
+	t_class_list *(*acopy_list_content)(t_class_list *, const t_class_list *));
 void							class_list_destruct(
 	t_class_list **pp_list);
 t_class_list					*class_list_copy(

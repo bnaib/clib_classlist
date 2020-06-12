@@ -60,7 +60,7 @@ int main(void)
 	const char		show_lists = 0; //0 - false; 1 - true
 	t_class_list	*p_list[2];
 
-	p_list[0] = class_list_construct(copy_list_content, free_list_content);
+	p_list[0] = class_list_construct(copy_list_content, free_list_content, NULL);
 	if (p_list[0] == NULL)
 	{
 		printf("%s%s\n", name_test, "ERROR class_list_construct");

@@ -16,7 +16,7 @@ You can use the following command in your terminal.
 Makefile use gcc. If you havn't it, download and install gcc.  
 Open folder "clib_classlist" and use command.
     <pre>make</pre>  
-- If build sucessed, you will can see file "libclasslib.a".
+- If build sucessed, you will can see file "libclasslist.a".
 - You can use standart make rules.  
     <pre>make clean</pre>  
     <pre>make fclean</pre>  
@@ -25,7 +25,7 @@ Open folder "clib_classlist" and use command.
     <pre>make runtests</pre>  
   
 ## Way to use  
-In your project, add static library "libclasslib.a" and
+In your project, add static library "libclasslist.a" and
 use header file "class_list.h" from folder "inc".  
     <pre>gcc -I ~/clib_classlist/inc/ yourproject.c -L ~/clib_classlist/ -lclasslist</pre>
     <pre>#include "class_list.h"</pre>  

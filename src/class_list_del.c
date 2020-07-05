@@ -3,7 +3,7 @@
      /*    By: Sergey Nikolaev                      / ___// | / /          */
     /*    Сontacts: sn.prog@yandex.ru               \__ \/  |/ /          */
    /*    Created: 2020.06.11 (YYYY.MM.DD)          ___/ / /|  /          */
-  /*    Updated: 2020.06.12 (YYYY.MM.DD)          /____/_/ |_/          */
+  /*    Updated: 2020.07.05 (YYYY.MM.DD)          /____/_/ |_/          */
  /*                                                                    */
 /* ****************************************************************** */
 
@@ -13,7 +13,7 @@ void				class_list_del_element(
 	t_class_list *p_list,
 	t_list_element **pp_element)
 {
-	p_list->free_list_content(*pp_element);
+	p_list->free_list_content((*pp_element)->p_content);
 	if ((*pp_element)->p_next != NULL && (*pp_element)->p_last != NULL)
 		class_list_cut_element(p_list, *pp_element);
 	free(*pp_element);

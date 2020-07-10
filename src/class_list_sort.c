@@ -28,10 +28,10 @@ void	class_list_sort(
 		while (++i[1] < p_list->length)
 		{
 			if (type_sort == ASC &&
-				list_elements_cmp(p_element[0], p_element[1]) < 0)
+				list_elements_cmp(p_element[0], p_element[1]) > 0)
 				p_element[0] = p_element[1];
 			else if (type_sort == DESC &&
-				list_elements_cmp(p_element[0], p_element[1]) > 0)
+				list_elements_cmp(p_element[0], p_element[1]) < 0)
 				p_element[0] = p_element[1];
 			p_element[1] = p_element[1]->p_next;
 		}

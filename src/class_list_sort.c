@@ -28,18 +28,23 @@ void	class_list_sort(
 	int (*list_elements_cmp)(t_list_element *, t_list_element *),
 	t_type_sort type_sort)
 {
-	size_t			i;
+	size_t			i[2];
 	t_list_element	*p_element;
 
-	i = 0;
-	while (++i < p_list->length)
+	i[0] = 0;
+	while (++i[0] < p_list->length)
 	{
 		p_element = class_list_get_root(p_list);
-		if (type_sort == ASC &&
-			list_elements_cmp(p_element, p_element->p_next) > 0)
-			class_list_swap_elements(p_element, p_element->p_next);
-		else if (type_sort == DESC &&
-			list_elements_cmp(p_element, p_element->p_next) < 0)
-			class_list_swap_elements(p_element, p_element->p_next);
+		i[1] = 0;
+		while (++i[1] < p_list->length)
+		{
+			if (type_sort == ASC &&
+				list_elements_cmp(p_element, p_element->p_next) > 0)
+				class_list_swap_elements(p_element, p_element->p_next);
+			else if (type_sort == DESC &&
+				list_elements_cmp(p_element, p_element->p_next) < 0)
+				class_list_swap_elements(p_element, p_element->p_next);
+			p_element = p_element->p_next;
+		}
 	}
 }

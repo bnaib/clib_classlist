@@ -3,7 +3,7 @@
      /*    By: Sergey Nikolaev                      / ___// | / /          */
     /*    Сontacts: sn.prog@yandex.ru               \__ \/  |/ /          */
    /*    Created: 2020.05.07 (YYYY.MM.DD)          ___/ / /|  /          */
-  /*    Updated: 2020.06.12 (YYYY.MM.DD)          /____/_/ |_/          */
+  /*    Updated: 2020.07.10 (YYYY.MM.DD)          /____/_/ |_/          */
  /*                                                                    */
 /* ****************************************************************** */
 
@@ -11,6 +11,12 @@
 # define __CLASS_LIST_H
 
 # include <stdlib.h>
+
+typedef enum	e_type_sort
+{
+	ASC,
+	DESC
+}				t_type_sort;
 
 typedef struct					s_list_element
 {
@@ -109,5 +115,13 @@ t_list_element					*class_list_copy_element_from_start_index(
 t_list_element					*class_list_copy_element_from_end_index(
 	const t_class_list *p_list,
 	size_t index);
+
+void	class_list_swap_elements(
+	t_list_element *p_el1,
+	t_list_element *p_el2);
+void	class_list_sort(
+	t_class_list *p_list,
+	int	(*list_elements_cmp)(t_list_element *, t_list_element *),
+	t_type_sort type_sort);
 
 #endif

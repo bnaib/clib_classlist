@@ -3,7 +3,7 @@
      #    By: Sergey Nikolaev                       / ___// | / /           #
     #    Сontacts: sn.prog@yandex.ru                \__ \/  |/ /           #
    #    Created: 2020.05.07 (YYYY.MM.DD)           ___/ / /|  /           #
-  #    Updated: 2020.06.11 (YYYY.MM.DD)           /____/_/ |_/           #
+  #    Updated: 2020.07.10 (YYYY.MM.DD)           /____/_/ |_/           #
  #                                                                      #
 # ******************************************************************** #
 
@@ -20,7 +20,8 @@ CFILES		=\
 	class_list_get.c\
 	class_list_cut.c\
 	class_list_del.c\
-	class_list_copy.c
+	class_list_copy.c\
+	class_list_sort.c
 
 TFILES		=\
 	01_construct.c\

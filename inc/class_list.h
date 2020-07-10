@@ -116,9 +116,6 @@ t_list_element					*class_list_copy_element_from_end_index(
 	const t_class_list *p_list,
 	size_t index);
 
-void	class_list_swap_elements(
-	t_list_element *p_el1,
-	t_list_element *p_el2);
 void	class_list_sort(
 	t_class_list *p_list,
 	int	(*list_elements_cmp)(t_list_element *, t_list_element *),

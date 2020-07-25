@@ -31,4 +31,37 @@ use header file "class_list.h" from folder "inc".
     <pre>#include "class_list.h"</pre>  
   
 ## Content  
-Description of structures and functions coming soon...
+
+- Structures:  
+    <pre>  
+    typedef struct      s_class_list t_class_list;
+    struct              s_class_list {
+        void            (*free_list_content)(void *);
+        void            *(*copy_list_content)(const void *);
+        t_class_list    *(*acopy_list_content)(t_class_list *, const t_class_list *);
+        size_t          length;
+        t_list_element  *p_element;
+    };
+    </pre>
+    **t_class_list** - Basic type for using classlist.  
+    **t_class_list fields** - It is private! Do not edit the values! Most likely uses the library functions to access these fields.  
+    - **free_list_content** - Function pointer for freeing the contents of a list element.  
+    - **copy_list_content** - Function pointer for copying the contents of a list element.  
+    - **acopy_list_content** - Function pointer for fixing the copied list after base copying.  
+    - **length** - Count elements of list  
+    - **p_element** - Pointer to root of list  
+    <pre>
+    typedef struct              s_list_element
+    {
+        void                    *p_content;
+        struct s_list_element   *p_last;
+        struct s_list_element   *p_next;
+    }                           t_list_element;
+    </pre>
+    **t_list_element** - Basic type for using classlist element.  
+    **t_list_element fields** - It is private! Do not edit the values!  
+    - **p_content** - Pointer to content of element.  
+    - **p_next** - Pointer to next element.  
+    - **p_last** - Pointer to last element.  
+
+Description of functions coming soon...
